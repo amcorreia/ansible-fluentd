@@ -1,14 +1,15 @@
 
-williamyeh.fluentd for Ansible Galaxy
+amcorreia.ansible_fluentd for Ansible Galaxy
 ============
 
 
-[![Circle CI](https://circleci.com/gh/William-Yeh/ansible-fluentd.svg?style=shield)](https://circleci.com/gh/William-Yeh/ansible-fluentd) [![Build Status](https://travis-ci.org/William-Yeh/ansible-fluentd.svg?branch=master)](https://travis-ci.org/William-Yeh/ansible-fluentd)
+[![Circle CI](https://circleci.com/gh/amcorreia/ansible-fluentd.svg?style=shield)](https://circleci.com/gh/amcorreia/ansible-fluentd) 
+[![Build Status](https://travis-ci.org/amcorreia/ansible-fluentd.svg?branch=master)](https://travis-ci.org/amcorreia/ansible-fluentd)
 
 
 ## Summary
 
-Role name in Ansible Galaxy: **[williamyeh.fluentd](https://galaxy.ansible.com/williamyeh/fluentd/)**
+Role name in Ansible Galaxy: **[amcorreia.ansible_fluentd](https://galaxy.ansible.com/amcorreia/ansible-fluentd/)**
 
 This Ansible role has the following features for [Fluentd](http://www.fluentd.org/):
 
@@ -91,7 +92,7 @@ tdagent_conf_others
 
 ### Step 1: add role
 
-Add role name `williamyeh.fluentd` to your playbook file.
+Add role name `amcorreia.ansible_fluentd` to your playbook file.
 
 
 ### Step 2: add variables, if any
@@ -107,7 +108,7 @@ Simple example:
 - hosts: all
 
   roles:
-    - williamyeh.fluentd
+    - amcorreia.ansible_fluentd
 
   vars:
     tdagent_plugins:
@@ -138,7 +139,7 @@ More practical example:
 - hosts: all
 
   roles:
-    - williamyeh.fluentd
+    - amcorreia.ansible_fluentd
 
   vars:
     tdagent_plugins:
