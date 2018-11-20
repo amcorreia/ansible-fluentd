@@ -10,7 +10,7 @@
 - name: install apt-related binaries for Ansible to work
   apt: name={{ item }}  state=present update_cache=yes
   with_items:
-    - python-software-properties
+    - software-properties-common
     - apt-transport-https
 
 - name: add APT signing key for td-agent
@@ -18,7 +18,6 @@
 
 - name: add td-agent repository
   apt_repository: repo='deb https://packages.treasuredata.com/2/{{ ansible_distribution|lower }}/{{ ansible_distribution_release|lower }}/ {{ ansible_distribution_release|lower }} contrib' state=present
-
 
 - name: install td-agent
   apt: name=td-agent  update_cache=yes  state=present force=yes
@@ -28,16 +27,12 @@
   apt: name="td-agent={{ tdagent_version }}*"  update_cache=yes  state=present force=yes
   when: tdagent_version is defined
 
-
-
 - name: install libcurl and make for compiling plugins
   apt: name={{ item }}  state=present update_cache=yes
   with_items:
     - libcurl4-gnutls-dev
     - build-essential
   when: tdagent_plugins is defined or tdagent_plugins_versions is defined
-
-
 
 - name: set INIT status and start
   service: name=td-agent state=started enabled=yes
